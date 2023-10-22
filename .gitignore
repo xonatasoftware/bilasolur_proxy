@@ -128,3 +128,4 @@ scp_script
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+README.md
