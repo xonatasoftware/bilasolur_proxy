@@ -1,10 +1,13 @@
 version: 0.2
 
 phases:
+  install:
+    commands:
+      - echo "Installing dependencies..."
+      - npm install
   pre_build:
     commands:
       - echo "This is the pre_build phase"
-      - npm install
   build:
     commands:
       - echo "This is the build phase"
@@ -15,5 +18,28 @@ phases:
 
 artifacts:
   files:
-    - "**/*"
-  base-directory: "dist/"
+    - "dist/**/*"
+    - "appspec.yml"
+    - "nginx_conf/**/*"
+    - "scripts/**/*"
+    - "html/**/*"
+  discard-paths: no
+# version: 0.2
+
+# phases:
+#   pre_build:
+#     commands:
+#       - echo "This is the pre_build phase"
+#       - npm install
+#   build:
+#     commands:
+#       - echo "This is the build phase"
+#       - npm run build
+#   post_build:
+#     commands:
+#       - echo "This is the post_build phase"
+
+# artifacts:
+#   files:
+#     - "**/*"
+#   base-directory: "dist/"

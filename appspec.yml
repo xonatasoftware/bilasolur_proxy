@@ -1,0 +1,21 @@
+version: 0.0
+os: linux
+files:
+  - source: /nginx_conf
+    destination: /etc/nginx/
+  - source: /html
+    destination: /usr/share/nginx/html/
+  - source: /scripts
+    destination: /home/ec2-user/scripts
+
+hooks:
+  ApplicationStop:
+    - location: /home/ec2-user/scripts/stop_nginx.sh
+      timeout: 300
+  BeforeInstall:
+    - location: scripts/make_scripts_executable.sh
+      runas: ec2-user
+      timeout: 300
+  AfterInstall:
+    - location: /home/ec2-user/scripts/reload_nginx.sh
+      timeout: 300
