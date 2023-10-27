@@ -20,10 +20,9 @@ hooks:
   ApplicationStop:
     - location: /scripts/stop_nginx.sh
       timeout: 300
-  BeforeInstall:
+  AfterInstall:
     - location: /scripts/make_scripts_executable.sh
       runas: ec2-user
       timeout: 300
-  AfterInstall:
     - location: /scripts/reload_nginx.sh
       timeout: 300
