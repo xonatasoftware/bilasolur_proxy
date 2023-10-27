@@ -23,23 +23,6 @@ artifacts:
     - "nginx_conf/**/*"
     - "scripts/**/*"
     - "html/**/*"
+    - "package.json"
+    - "package-lock.json" # Optional but recommended
   discard-paths: no
-# version: 0.2
-
-# phases:
-#   pre_build:
-#     commands:
-#       - echo "This is the pre_build phase"
-#       - npm install
-#   build:
-#     commands:
-#       - echo "This is the build phase"
-#       - npm run build
-#   post_build:
-#     commands:
-#       - echo "This is the post_build phase"
-
-# artifacts:
-#   files:
-#     - "**/*"
-#   base-directory: "dist/"

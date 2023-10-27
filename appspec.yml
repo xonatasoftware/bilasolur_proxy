@@ -9,12 +9,10 @@ files:
     destination: /usr/share/nginx/html/
   - source: /scripts/
     destination: /home/ec2-user/scripts/
-  # - source: /nginx_conf
-  #   destination: /etc/nginx/
-  # - source: /html
-  #   destination: /usr/share/nginx/html/
-  # - source: /scripts
-  #   destination: /home/ec2-user/scripts
+  - source: package.json
+    destination: /home/ec2-user/exoserver/
+  - source: package-lock.json # optional but recommended
+    destination: /home/ec2-user/exoserver/
 
 hooks:
   ApplicationStop:
